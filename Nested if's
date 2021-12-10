@@ -1,0 +1,38 @@
+/**
+
+Gryphon McDaniel
+CSC 160-179
+9/12/21
+
+This program uses nested 'if' functions to classify a number inputed by the user.
+
+*/
+import java.util.Scanner;
+class Main 
+{
+  public static void main(String[] args) 
+  {
+    Scanner input = new Scanner(System.in);
+    System.out.println("Number?");
+    int number = input.nextInt();
+    if(number < 1 || number > 4)
+      System.out.println("That number is not valid");
+    
+    else if (number == 1){
+      System.out.println("");
+      System.out.println("1 is Cyan.");
+    }
+    else if (number == 2){
+      System.out.println("");
+      System.out.println("2 is Magenta.");
+    }
+    else if (number == 3){
+      System.out.println("");
+      System.out.println("3 is Yellow.");
+    }
+    else if (number == 4){
+      System.out.println("");
+      System.out.println("4 is Black.");
+    }
+  }
+}
