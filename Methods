@@ -1,0 +1,115 @@
+/*
+
+Gryphon McDaniel
+10/22/21
+CSC 160-179 
+
+This program manipulates the Lab6Data.txt file into a spreadsheet type design. It puts names and sales into the main body of text. It also displays the total amount of sales from all employees.
+
+*/
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+
+class Main {
+  //used to call all the other methods
+  public static void main(String[] args) {
+
+    displayHeader();
+    displayBody();
+    displayFooter();
+
+
+  }
+  
+  public static void displayHeader(){
+
+    System.out.println("Sales Report");
+    System.out.println("Name..........Amount");
+    System.out.println("");
+  }
+
+
+  public static void displayBody(){
+    
+    try {
+      int i = 0;
+      // I created a file object that can be used for the file reader
+      File myObj = new File("Lab6Data.txt");
+      Scanner myReader = new Scanner(myObj);
+
+      while (myReader.hasNextLine()) {
+        //I grabbed every two lines because they are always formated name/sales. It makes manipulation of the data far easier.
+        String name = myReader.nextLine();
+        String sales = myReader.nextLine();
+
+        //Method end condition
+        if(name.equals("quit")){
+          break;
+        }
+        else{
+          //I found the length of the name because it determines how many periods will be used in between the name and sales.
+          //NOTE: If the name is longer than 11 characters, the program does not break.
+          int lengthofname = name.length();
+          int numberofperiods = 11 - lengthofname;
+          String periodsinformat = ".";
+          for(int index = 0; index < numberofperiods; index++){
+            periodsinformat = periodsinformat + ".";
+          }
+          //I have to use temporary string to store the data of the sales. This allows me to break apart the string and insert a comma.
+          String backoftempsalesindex = sales.substring(1,4);
+          String frontoftempsalesindex = sales.substring(0,1);
+          String backofsaleswithcomma = "," + backoftempsalesindex;
+          String finalsalesnumber = frontoftempsalesindex + backofsaleswithcomma;
+          System.out.println(name + periodsinformat + finalsalesnumber);
+        }
+
+        i++;
+      }
+      myReader.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+  }
+
+  //The footer creates the total of sales and displays them in a total....sales format.
+  public static void displayFooter(){
+
+    System.out.println("");
+    int salesinteger = 0;
+    int totalsales = 0;
+
+    try {
+      File myObj = new File("Lab6Data.txt");
+      Scanner myReader = new Scanner(myObj);
+      
+      while (myReader.hasNextLine()) {
+        String name = myReader.nextLine();
+        String sales = myReader.nextLine();
+        
+        if(name.equals("quit")){
+          break;
+        }
+        else{
+          //turns the sales into an integer, so they can be added together later
+          salesinteger = Integer.parseInt(sales);
+        }
+        totalsales += salesinteger;
+      }
+      //I used temporary strings to both convert the sales integer to a string, and to put the comma in the correct spot.
+      String stringofnumbers = String.valueOf(totalsales);
+      String tempfirsttwonumbers = stringofnumbers.substring(0,2);
+      String tempremainingnumbers = stringofnumbers.substring(2,5);
+      String saleswithcomma = tempfirsttwonumbers + ",";
+      String finaltotalsales = saleswithcomma + tempremainingnumbers;
+      System.out.println("Total......" + finaltotalsales);
+      myReader.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+  }
+}
