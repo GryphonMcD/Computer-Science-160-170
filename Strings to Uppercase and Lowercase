@@ -1,0 +1,25 @@
+/**
+
+Gryphon McDaniel
+9/26/21
+CSC 160-179
+
+This program converts a given string into an uppercase and lowercase version.
+
+**/
+
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+
+    System.out.println("Sentence?");
+    System.out.println("");
+    String sentence = input.nextLine();
+
+    System.out.println(sentence.toUpperCase());
+    System.out.println(sentence.toLowerCase());
+
+  }
+}
