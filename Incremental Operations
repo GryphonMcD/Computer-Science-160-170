@@ -1,0 +1,23 @@
+/**
+
+Gryphon McDaniel
+CSC 160-179
+9/12/21
+
+This program takes an integer from the user and tells them its next increment when adding 1.
+
+*/
+
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+
+    Scanner input = new Scanner(System.in);
+    System.out.println("Integer?");
+    int Num = input.nextInt();
+    System.out.println("The integer you entered is " + Num + ".");
+    Num = Num + 1;
+    System.out.println("The next integer is " + Num + ".");
+  }
+}
