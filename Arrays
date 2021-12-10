@@ -1,0 +1,45 @@
+/*
+
+Gryphon McDaniel
+CSC 160-179
+10/14/21
+
+This program creates a list filled with integers and prints them, according to the parameters. It also find the smallest integer in the list.
+
+*/
+
+class Main {
+  public static void main(String[] args) {
+
+    int[] myList = {23, 79, 41, 68, 17, 39, 51, 75, 95, 19};
+
+
+
+    //This is a place holder used to find the minimum value in the list.
+    int smallestNumber = myList[0];
+
+    System.out.print("Integer values: ");
+
+    for(int i = 0; i < myList.length; i++){
+
+      //This 'if' comares each number in the list and finds the smallest integer.
+      if(myList[i] < smallestNumber){
+        smallestNumber = myList[i];
+      }
+
+      //This 'if' is needed for proper syntax. 
+      //It leaves the comma out of the last number in the printed list.
+      if(i == myList.length - 1){
+        System.out.print(myList[i] + " " );
+      }
+      else{
+        System.out.print(myList[i] + ", ");
+      }
+      
+    }
+
+    System.out.println("");
+    System.out.println("Smallest integer: " + smallestNumber);
+
+  }
+}
