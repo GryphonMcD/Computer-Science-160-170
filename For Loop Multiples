@@ -1,0 +1,31 @@
+/**
+
+Gryphon McDaniel
+CSC 160-179
+10/3/21
+
+This program prints multiples of 3, starting at 3 and ending with 99.
+
+**/
+
+
+class Main 
+{
+  public static void main(String[] args) 
+  {
+    System.out.println("Multiples of Three");
+    
+    int index = 1;
+
+    while (index <= 99){
+
+      if ( index % 3 == 0){
+        System.out.println(index);
+      }
+      index++;
+    }
+
+
+    
+  }
+}
