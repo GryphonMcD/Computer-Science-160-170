@@ -1,0 +1,32 @@
+//#20210907 ddl: your code has to pass the three tests for this assignment.
+
+/**
+
+Gryphon McDaniel
+CSC 160-179
+9/12/21
+
+This code asks for your name and the number of classes you are taking. It then creates a string telling the user their name and how many classes they are taking, in a single sentence.
+
+*/
+
+
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+
+    Scanner input = new Scanner(System.in);
+
+    System.out.println("Name?");
+    
+    String Name = input.nextLine();
+
+    System.out.println("How many classes?");
+
+    int Classes = input.nextInt();
+
+    System.out.println("Your name is " + Name + " and you are in " + Classes + " classes.");
+    
+  }
+}
