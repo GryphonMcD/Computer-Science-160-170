@@ -1,0 +1,32 @@
+/**
+
+Gryphon McDaniel
+9/22/21
+CSC 179-160
+
+This program uses a switch statement to determine a color associated with a number 1-4. If the isn't with in 1-4 the number is displayed as invalid.
+
+**/
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    System.out.println("Number?");
+    int userNumber = input.nextInt();
+    System.out.println("");
+    switch (userNumber - 1) {
+
+      case 0: System.out.println("1 is Cyan."); break;
+
+      case 1: System.out.println("2 is Magenta."); break;
+
+      case 2: System.out.println("3 is Yellow."); break;
+
+      case 3: System.out.println("4 is Black."); break;
+
+      default: System.out.println("That number is not valid."); break;
+
+    }
+  }
+}
