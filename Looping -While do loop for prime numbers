@@ -1,0 +1,40 @@
+// 20211004 ddl: problem has to use a while-do but you've used a while loop.
+//FIXED
+/**
+
+Gryphon McDaniel
+CSC 160-179
+10/3/21
+
+This program prints 25 prime numbers using a do-while loop.
+
+**/
+
+
+class Main 
+{
+  public static void main(String[] args) {
+
+    int index = 2;
+    //I created this varible to keep track of the amount of prime numbers printed. It allows for specific amounts of printed prime numbers.
+    int primenumbercount = 0;
+
+    System.out.println("Prime numbers");
+
+    do {
+      if (numberIsPrime(index)){
+        System.out.println(index);
+        primenumbercount += 1;
+      }
+      index++;
+    }while(primenumbercount <= 25);
+  }
+  
+  public static boolean numberIsPrime(int p){
+    boolean returnValue = true;
+    for(int x = 2; x <= (p/2); x++){
+      if(p%x == 0)  returnValue = false;
+    }
+    return returnValue;
+  }
+}
