@@ -1,0 +1,28 @@
+/**
+
+Gryphon McDaniel
+CSC 160-179
+10/3/21
+
+
+**/
+
+
+import java.util.Scanner;
+class Main 
+{
+  public static void main(String[] args) 
+  {
+    Scanner input = new Scanner(System.in);
+    String phrase = input.nextLine();
+    
+    //
+    while (!phrase.equals("quit")){
+     
+      System.out.println(phrase.toUpperCase());
+      phrase = input.nextLine();
+    }
+  
+  }
+
+}
