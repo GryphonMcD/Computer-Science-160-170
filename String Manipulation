@@ -1,0 +1,33 @@
+/**
+
+Gryphon McDaniel
+9/26/21
+CSC 160-179
+
+This program sepatates the first two letters of a string from the other three. 
+
+**/
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+
+    System.out.println("Five character string?");
+    String userString = input.nextLine();
+
+    int userStringLength = userString.length();
+
+    if (userStringLength == 5) {
+
+      System.out.println("");
+      System.out.println(userString.substring(0,2));
+      System.out.println("");
+      System.out.println(userString.substring(2,5));
+
+    }
+    else {
+      System.out.println("Invalid input.");
+    }
+  }
+}
