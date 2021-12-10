@@ -1,0 +1,52 @@
+/*
+
+Gryphon McDaniel
+11/23/21
+CSC 160-179
+
+This program can fill, dispense and check coffee in the dispenser.
+
+*/
+
+public class Main {
+  public static void main(String[] args){
+    CoffeeDispenser myCoffeeDispenser = new CoffeeDispenser();
+
+    myCoffeeDispenser.fillDispenser();
+
+    System.out.println(myCoffeeDispenser.getRemainingOunces() + " ounces reamin in the dipenser.");
+
+    myCoffeeDispenser.dipenseCoffee(100);
+
+    System.out.println(myCoffeeDispenser.getRemainingOunces() + " ounces reamin in the dipenser.");
+
+  }
+}
+
+
+class CoffeeDispenser {
+  private int remainingOunces;
+  private int dispenserCapacity = 128; // In ounces
+
+  public void fillDispenser(){
+   
+    this.remainingOunces = dispenserCapacity;
+
+  }
+
+  public int getRemainingOunces(){
+    return this.remainingOunces;
+  }
+
+  public void dipenseCoffee(int coffeeRemoved){
+    if(coffeeRemoved > remainingOunces) {
+      System.out.println("Too much coffee was requested. Canceling coffee order. Please request an amount under " + remainingOunces + " or refill the dispenser.");
+    }
+    else{
+      this.remainingOunces = this.remainingOunces - coffeeRemoved;
+      System.out.println(coffeeRemoved + " ounces were dispensed.");
+    }
+
+  }
+
+}
